@@ -5,8 +5,17 @@
 
 You can install the package via composer:
 
+add the following to repositories in the composer.json: 
+
+```
+{
+    "type": "git",
+    "url": "https://github.com/concept7/laravel-supervisord-monitor.git"
+}
+```
+
 ```bash
-composer require concept7/supervisord-monitor-cli
+composer require concept7/laravel-supervisord-monitor-cli
 ```
 
 
