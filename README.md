@@ -1,4 +1,4 @@
-# "Supervisord Monitor CLI"
+# "Supervisord Monitor"
 
 
 ## Installation
