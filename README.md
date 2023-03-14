@@ -15,14 +15,14 @@ add the following to repositories in the composer.json:
 ```
 
 ```bash
-composer require concept7/laravel-supervisord-monitor-cli
+composer require concept7/laravel-supervisord-monitor
 ```
 
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="supervisord-monitor-cli-config"
+php artisan vendor:publish --tag="supervisord-monitor-config"
 ```
 
 This is the contents of the published config file:

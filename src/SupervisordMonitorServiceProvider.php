@@ -1,12 +1,12 @@
 <?php
 
-namespace Concept7\SupervisordMonitorCli;
+namespace Concept7\SupervisordMonitor;
 
-use Concept7\SupervisordMonitorCli\Commands\SupervisordMonitorCliCommand;
+use Concept7\SupervisordMonitor\Commands\SupervisordMonitorCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class SupervisordMonitorCliServiceProvider extends PackageServiceProvider
+class SupervisordMonitorServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,8 +16,8 @@ class SupervisordMonitorCliServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('supervisord-monitor-cli')
+            ->name('supervisord-monitor')
             ->hasConfigFile()
-            ->hasCommand(SupervisordMonitorCliCommand::class);
+            ->hasCommand(SupervisordMonitorCommand::class);
     }
 }

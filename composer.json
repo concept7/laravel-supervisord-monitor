@@ -36,12 +36,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Concept7\\SupervisordMonitorCli\\": "src"
+            "Concept7\\SupervisordMonitor\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Concept7\\SupervisordMonitorCli\\Tests\\": "tests"
+            "Concept7\\SupervisordMonitor\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Concept7\\SupervisordMonitorCli\\SupervisordMonitorCliServiceProvider"
+                "Concept7\\SupervisordMonitor\\SupervisordMonitorServiceProvider"
             ],
             "aliases": {
-                "SupervisordMonitor": "Concept7\\SupervisordMonitorCli\\Facades\\SupervisordMonitorCli"
+                "SupervisordMonitor": "Concept7\\SupervisordMonitor\\Facades\\SupervisordMonitor"
             }
         }
     },

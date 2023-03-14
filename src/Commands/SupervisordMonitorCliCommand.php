@@ -1,24 +1,24 @@
 <?php
 
-namespace Concept7\SupervisordMonitorCli\Commands;
+namespace Concept7\SupervisordMonitor\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 
-class SupervisordMonitorCliCommand extends Command
+class SupervisordMonitorCommand extends Command
 {
-    public $signature = 'supervisord-monitor-cli:restart';
+    public $signature = 'supervisord-monitor:restart';
 
     protected $description = 'Restarts given Supervisor daemon at the LinQhost server';
 
     public function handle()
     {
-        $username = config('supervisord-monitor-cli.basic_auth.username');
-        $password = config('supervisord-monitor-cli.basic_auth.password');
-        $protocol = config('supervisord-monitor-cli.protocol');
-        $host = config('supervisord-monitor-cli.host');
-        $path = config('supervisord-monitor-cli.path');
-        $daemonNames = config('supervisord-monitor-cli.daemon_names');
+        $username = config('supervisord-monitor.basic_auth.username');
+        $password = config('supervisord-monitor.basic_auth.password');
+        $protocol = config('supervisord-monitor.protocol');
+        $host = config('supervisord-monitor.host');
+        $path = config('supervisord-monitor.path');
+        $daemonNames = config('supervisord-monitor.daemon_names');
 
         $baseUrl = $protocol.'://'.$host;
         $supervisorUrl = $path;
