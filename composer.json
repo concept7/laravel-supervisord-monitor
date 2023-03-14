@@ -1,11 +1,11 @@
 {
-    "name": "concept7/laravel-supervisord-monitor-cli",
+    "name": "concept7/laravel-supervisord-monitor",
     "keywords": [
         ":vendor_name",
         "laravel",
         ":package_slug"
     ],
-    "homepage": "https://github.com/concept7/laravel-supervisord-monitor-cli",
+    "homepage": "https://github.com/concept7/laravel-supervisord-monitor",
     "license": "MIT",
     "authors": [
         {
