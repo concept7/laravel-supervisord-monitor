@@ -32,6 +32,17 @@ return [
 ```
 
 ## Usage
+Add the following lines to the .env.
+
+When you have the url: https://supervisor-monitor.xyz/supervisor
+```
+SUPERVISORD_MONITOR_HOST="supervisor-monitor.xyz"
+SUPERVISORD_MONITOR_PATH="supervisor"
+SUPERVISORD_MONITOR_BASIC_AUTH_USERNAME="<auth username>"
+SUPERVISORD_MONITOR_BASIC_AUTH_PASSWORD="<auth password>"
+SUPERVISORD_MONITOR_DAEMON_NAMES="<daemon name as listed in the supervisor monitor web page>"
+```
+Run restart with following command
 ```
 php artisan supervisord-monitor-cli:restart
 ```
