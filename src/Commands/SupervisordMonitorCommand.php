@@ -78,6 +78,8 @@ class SupervisordMonitorCommand extends Command
                     return Command::FAILURE;
                 }
             }
+        } else {
+            $this->error('Connection failed: '.$response->reason());
         }
     }
 }
