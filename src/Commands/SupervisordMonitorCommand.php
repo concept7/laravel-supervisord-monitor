@@ -20,10 +20,29 @@ class SupervisordMonitorCommand extends Command
         $path = config('supervisord-monitor.path');
         $daemonNames = config('supervisord-monitor.daemon_names');
 
+        if (! $host) {
+            $this->error('.env variable SUPERVISORD_MONITOR_HOST missing');
+
+            return;
+        }
+
+        if (! $path) {
+            $this->error('.env variable SUPERVISORD_MONITOR_PATH missing');
+
+            return;
+        }
+
+        if (! $daemonNames) {
+            $this->error('.env variable SUPERVISORD_MONITOR_DAEMON_NAMES missing');
+
+            return;
+        }
+
         $baseUrl = $protocol.'://'.$host;
         $supervisorUrl = $path;
 
         $client = Http::baseUrl($baseUrl);
+
         if ($username && $password) {
             $client = $client->withBasicAuth($username, $password);
         }
