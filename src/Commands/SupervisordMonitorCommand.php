@@ -23,21 +23,26 @@ class SupervisordMonitorCommand extends Command
         $baseUrl = $protocol.'://'.$host;
         $supervisorUrl = $path;
 
+        $client = Http::baseUrl($baseUrl);
+        if ($username && $password) {
+            $client = $client->withBasicAuth($username, $password);
+        }
+
         /** @var \Illuminate\Http\Client\Response */
-        $response = Http::withBasicAuth($username, $password)->post($baseUrl.'/'.$supervisorUrl);
+        $response = $client->post($supervisorUrl);
 
         if ($response->successful()) {
             foreach (explode(',', $daemonNames) as $daemonName) {
                 $daemonName = trim($daemonName);
 
                 /** @var \Illuminate\Http\Client\Response */
-                $stopResponse = Http::withBasicAuth($username, $password)->retry(3, 100)->post($baseUrl.'/'.$supervisorUrl.'/control/stop/localhost/'.$daemonName);
+                $stopResponse = $client->retry(3, 100)->post($supervisorUrl.'/control/stop/localhost/'.$daemonName);
 
                 if ($stopResponse->successful()) {
                     $this->info('Daemon ['.$daemonName.'] stopped');
 
                     /** @var \Illuminate\Http\Client\Response */
-                    $startResponse = Http::withBasicAuth($username, $password)->retry(3, 100)->post($baseUrl.'/'.$supervisorUrl.'/control/start/localhost/'.$daemonName);
+                    $startResponse = $client->retry(3, 100)->post($supervisorUrl.'/control/start/localhost/'.$daemonName);
 
                     if ($startResponse->successful()) {
                         $this->info('Daemon ['.$daemonName.'] started');
