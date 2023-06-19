@@ -1,9 +1,9 @@
 {
     "name": "concept7/laravel-supervisord-monitor",
     "keywords": [
-        ":vendor_name",
+        "Concept7",
         "laravel",
-        ":package_slug"
+        "SupervisordMonitor"
     ],
     "homepage": "https://github.com/concept7/laravel-supervisord-monitor",
     "license": "MIT",
